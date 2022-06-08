@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Formation DevSecOps</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		<link rel="stylesheet" href="custom.css">
+
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<a href="https://revealjs.com">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8zuXtQ6g0nmdBzPUBtBmbYHyrX9gpf-xVNA&usqp=CAU" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h3>Usine logicielle et architecture applicative</h3>
+					<p>
+						<small>Par Kamel NAJJAR / JC</br>
+						AWS, CKA, CKAD ,CKS, Snyk, New Relic</br>
+						<a href="https://github.com/kamel2k">Github</a> et <a href="https://twitter.com/home?lang=fr">@kamel2k</a></small>
+					</p>
+				</section>
+
+					<section id="fragments">
+						<h2>Sommaire</h2>
+						<p class="fragment p1"><small>Concepts de l'usine logicielle</small></p>
+						<p class="fragment p1"><small>Usine logicielle de la DSID</small></p>
+						<p class="fragment p1"><small>Qualité de code avec SonarQube</small></p>
+						<p class="fragment p1"><small>Gestion des dépendances et des releases avec Nexus Repository</small></p>
+						<p class="fragment p1"><small>Sécurité logicielle avec Nexus IQ</small></p>
+						<p class="fragment p1"><small>Intégration continue avec Jenkins</small></p>
+						<p class="fragment p1"><small>Architecture applicative de Gainde</small></p>
+						<p class="fragment p1"><small>Plateforme du POC</small></p>
+					</section>
+
+					<section>
+						<h3>Concepts de l'usine logicielle</h3>
+						<img src="img/usine-logicielle.png" alt="usine logicielle">
+					</section>
+
+			<section>
+				<section>
+					<h2>Usine logicielle de la DSID</h2>
+				</section>
+
+				<section>
+					<h3>Description des outils</h3>
+					<table>
+					   <tr>
+					       <td>
+									 <img src="img/jenkins.jpeg" alt="jenkins" style="height: 80px; margin: 0 auto 0rem auto;">
+		 						 </td>
+								 <td>
+									 <img src="img/nexus-repo.png" alt="Nexus Repo" style="height: 80px; margin: 0 auto 0rem auto;">
+								 </td>
+								 <td>
+									 <img src="img/nexus-iq.png" alt="Nexus IQ" style="height: 80px; margin: 0 auto 0rem auto;">
+								 </td>
+								 <td>
+									 <img src="img/sonarqube.png" alt="SonarQube" style="height: 80px; margin: 0 auto 0rem auto;">
+								 </td>
+					   </tr>
+					   <tr>
+					       <td style="vertical-align: top;">
+									 <p style="width: 200px;font-size: 25px;">Outil open source de d'automatisation. Il aide à automatiser les parties du développement logiciel liées au build, aux tests et au déploiement, et facilite l'intégration continue et la livraison continue.</p>
+								 </td>
+					       <td style="vertical-align: top;">
+									 <p style="width: 200px;font-size: 25px;">Outil développé par Sonatype permettant la gestion des paquets logiciel de l'application. Il prend en charge les librairies Java et JS.</p>
+								 </td>
+					       <td style="vertical-align: top;">
+									 <p style="width: 200px;font-size: 25px;">Outil de détection de vulnérabilité des paquets logiciels. Il permet d'identifier les failles de sécurité et les problèmes de licences et permet d'y remedier.</p>
+								 </td>
+								 <td style="vertical-align: top;">
+									 <p style="width: 200px;font-size: 25px;">Outil pour la gestion de la qualité de code des applications Java (Spring) ou Javascript (Angular). Il permet de faire une analyse statique du code et présente des recommandations d'améliorations.</p>
+								 </td>
+						   </tr>
+					</table>
+				</section>
+
+				<section>
+					<h3>Accès à la plateforme</h3>
+					<table>
+					   <tr>
+					       <td>
+									 <img src="img/jenkins.jpeg" alt="jenkins" style="height: 80px; margin: 0 auto 0rem auto;">
+		 						 </td>
+					       <td style="vertical-align: middle;">
+									 <a href="http://10.2.3.58:8080/">http://10.2.3.58:8080/</a>
+								 </td>
+					   </tr>
+					   <tr>
+					       <td>
+									 <img src="img/nexus-repo.png" alt="Nexus Repo" style="height: 80px; margin: 0 auto 0rem auto;">
+								 </td>
+					       <td style="vertical-align: middle;">
+									 <a href="http://10.2.3.58:8081/">http://10.2.3.58:8081/</a>
+								 </td>
+					   </tr>
+						 <tr>
+					       <td>
+									 <img src="img/nexus-iq.png" alt="Nexus IQ" style="height: 80px; margin: 0 auto 0rem auto;">
+								 </td>
+					       <td style="vertical-align: middle;">
+									 <a href="http://10.2.3.58:8070/">http://10.2.3.58:8070/</a>
+								 </td>
+					   </tr>
+						 <tr>
+					       <td>
+									 <img src="img/sonarqube.png" alt="SonarQube" style="height: 80px; margin: 0 auto 0rem auto;">
+								 </td>
+					       <td style="vertical-align: middle;">
+									 <a href="http://10.2.3.58:9000/">http://10.2.3.58:9000/</a>
+								 </td>
+					   </tr>
+					</table>
+				</section>
+			</section>
+
+<!--
+		 	<section data-background-image="img/plateforme-actuelle-poc.png" data-background-position="center" data-background-size="auto">
+				<h3>Plateforme actuelle du POC</h3>
+		  </section>
+-->
+
+
+			<section>
+				<section><h2>Qualité de code avec SonarQube</h2></section>
+
+				<section>
+					<h3>Principe</h3>
+					<img src="img/sonar-workflow.png" alt="sonar">
+				</section>
+			</section>
+
+
+				<section>
+					<section><h2>Gestion des dépendances et des releases avec Nexus Repository</h2></section>
+				<section>
+					<h2>Gestion des dépendances</h2>
+					<a href="img/nexus-repo-dep.png">
+						<img src="img/nexus-repo-dep.png" alt="nexus repo">
+					</a>
+				</section>
+				<section>
+					<h2>Gestion des releases</h2>
+					<a href="img/nexus-repo-release.png">
+						<img src="img/nexus-repo-release.png" alt="nexus repo">
+					</a>
+				</section>
+			</section>
+
+			<section>
+				<section><h2>Sécurité logicielle avec Nexus IQ</h2></section>
+				<section>
+					<h3>Principe</h3>
+					<a href="img/nexus-iq-workflow.png">
+						<img src="img/nexus-iq-workflow.png" alt="nexus iq">
+					</a>
+				</section>
+			</section>
+
+			<section>
+				<section><h2>Intégration continue avec Jenkins</h2></section>
+
+				<section>
+					  <h2>Pipeline Jenkins</h2>
+						<img src="img/pipeline-jenkins.png" alt="nexus iq"></img>
+				</section>
+			</section>
+
+				<section>
+					<section><h2>Architecture applicative de Gainde</h2></section>
+
+					<section data-background-iframe="img/archi-gainde-v3.png" data-background-position="center" data-background-size="auto">
+					</section>
+
+					<section>
+						<h3>Présentation des briques techniques</h3>
+						<table>
+							<tr>
+									<td style="text-align: center;"><small>Gainde UI</small></td>
+									<td style="text-align: center;"><small>Passerelle</small></td>
+									<td style="text-align: center;"><small>Module Métier</small></td>
+									<td style="text-align: center;"><small>ELK</small></td>
+							</tr>
+						   <tr>
+						       <td style="text-align: center;">
+										 <img src="img/gainde-ui.png" alt="Gainde UI" style="height: 80px; margin: 0 auto 0rem auto;">
+			 						 </td>
+									 <td style="text-align: center;">
+										 <img src="img/springBoot.png" alt="Passerelle" style="height: 80px; margin: 0 auto 0rem auto;">
+									 </td>
+									 <td style="text-align: center;">
+										 <img src="img/module.png" alt="Module métier" style="height: 80px; margin: 0 auto 0rem auto;">
+									 </td>
+									 <td style="text-align: center;">
+										 <img src="img/elk-stack-logo.png" alt="ELK" style="height: 80px; margin: 0 auto 0rem auto;">
+									 </td>
+						   </tr>
+						   <tr>
+						       <td style="vertical-align: top;">
+										 <p style="width: 200px;font-size: 25px;"><small>Application Angular qui regroupe tous les écrans des modules applicatifs.</small></p>
+									 </td>
+						       <td style="vertical-align: top;">
+										 <p style="width: 200px;font-size: 25px;"><small>La passerelle c'est un module technique en spring boot, qui permet de faire un "forward" des requetes, d'externaliser la configuration de Gainde et d'assurer la sécurité avec Keycloak.</small></p>
+									 </td>
+						       <td style="vertical-align: top;">
+										 <p style="width: 200px;font-size: 25px;"><small>C'est groupe de fonctionnalités qui concerne un domaine spécifique tel que manifeste ou declaration. Il s'agit d'une application en spring boot qui expose une api REST. C'est une application unitaire, scalable et résiliente</small></p>
+									 </td>
+									 <td style="vertical-align: top;">
+										 <p style="width: 200px;font-size: 25px;"><small>Elasticsearch qui représente un moteur de recherche, logstash pour la transformation des logs et Kibana pour les tableaux de bord.</small></p>
+									 </td>
+							   </tr>
+						</table>
+					</section>
+
+
+				</section>
+
+			<section>
+				<section><h2>Plateforme du POC</h2></section>
+
+				<section>
+					<h3>Plateforme actuelle du POC</h3>
+					<img src="img/plateforme-actuelle-poc.png" alt="plateforme actuelle">
+				</section>
+
+				<section>
+					 <h3>Plateforme cible du POC</h3>
+				 </section>
+				<section data-background-iframe="img/plateforme-cible-poc.png" data-background-position="center" data-background-size="auto"></section>
+			</section>
+
+				<section style="text-align: left;">
+					<h1>Fin</h1>
+					<p>
+						Merci pour votre attention
+					</p>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
